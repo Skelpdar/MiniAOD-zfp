@@ -11,9 +11,9 @@ import lz4.frame
 
 f = uproot.open("nanoFDA8C137.root")
 
-branches = ["Electron_dxy"]
+branches = ["Jet_chHEF"]
 
-n = 4
+n = 0
 
 X = [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
 
