@@ -15,7 +15,7 @@ void LeafIteration(const char* path){
 	//Iterate through all leaves and find those with type Float_t
 
 	while ((key=(TKey*)next())) {
-		TTree* tree = (TTree*)key->ReadObj();
+		auto tree = ((TTree*)key->ReadObj())->CloneTree();
 
 		TObjArray* leaves = tree->GetListOfLeaves();
 
@@ -30,7 +30,10 @@ void LeafIteration(const char* path){
 					TBranch* branch = leaf->GetBranch();
 
 					//Create a new leaf with the compressed contents under the same branch
-					TLeafElement* compressedleaf = new TLeafElement(branch, "compressed", "Float_t");
+					//TLeafElement* compressedleaf = new TLeafElement(branch, "compressed", "Float_t");
+					//
+					//
+					//delete leaf;
 			}		
 		}		
 
